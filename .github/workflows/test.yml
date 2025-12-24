@@ -9,14 +9,14 @@ on:
 jobs:
   prod-check:
     runs-on: ubuntu-latest
-    if: runner.os == 'Windows'
+    #if: runner.os == 'Windows'
     steps:
       - run: echo "Deploying to production server on branch $GITHUB_REF"
 
   runner-context:
     needs: prod-check
     runs-on: windows-latest
-    if: runner.os == 'Windows'
+    #if: runner.os == 'Windows'
     steps:
       - name: Dump runner context
         env:
