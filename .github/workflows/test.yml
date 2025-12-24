@@ -13,6 +13,7 @@ jobs:
       - run: echo "Deploying to production server on branch $GITHUB_REF"
 
   runner-context:
+    if: github.ref == 'ref/heads/main'
     needs: prod-check
     runs-on: windows-latest
     steps:
