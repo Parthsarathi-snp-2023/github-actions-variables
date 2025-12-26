@@ -21,5 +21,7 @@ jobs:
       - name: Dump runner context
         env:
           RUNNER_CONTEXT: ${{ toJson(runner) }}
-        run: echo "$RUNNER_CONTEXT"
-        echo " end"
+        run: |
+          echo "$RUNNER_CONTEXT"
+          if: runner.os == 'windows'
+            echo "runner is windows"
