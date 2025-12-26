@@ -9,7 +9,7 @@ on:
 jobs:
   prod-check:
     runs-on: ubuntu-latest
-    if: runner.os == 'Windows'
+    #if: runner.os == 'Windows'
     steps:
       - run: echo "Deploying to production server on branch $GITHUB_REF"
 
@@ -22,3 +22,4 @@ jobs:
         env:
           RUNNER_CONTEXT: ${{ toJson(runner) }}
         run: echo "$RUNNER_CONTEXT"
+        echo " end"
