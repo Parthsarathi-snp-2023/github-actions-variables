@@ -16,12 +16,10 @@ jobs:
   runner-context:
     needs: prod-check
     runs-on: windows-latest
-    #if: runner.os == 'Windows'
+    if: ${{ github.ref == 'refs/heads/partha' }}
     steps:
       - name: Dump runner context
         env:
           RUNNER_CONTEXT: ${{ toJson(runner) }}
         run: |
           echo "$RUNNER_CONTEXT"
-          if: runner.os == 'windows'
-            echo "runner is windows"
